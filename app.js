@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var appRoutes = require('./routes/app');
+var activityRoutes = require('./routes/activity');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(function (req, res, next) {
   next();
 });
 
+app.use('/activities', activityRoutes);
 app.use('/', appRoutes);
 
 
